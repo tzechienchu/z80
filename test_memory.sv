@@ -6,7 +6,7 @@ module test_memory (input Clk,
                     input [19:0] A,
                     input write,read );
 												
-   parameter size = 1000; // expand memory as needed (current is 64 words)
+   parameter size = 1024; // expand memory as needed 
 	 
    logic [7:0] mem_array [size-1:0];
    logic [7:0] mem_out;
@@ -1050,7 +1050,7 @@ module test_memory (input Clk,
         mem_array[998] <= 8'hd1;
         mem_array[999] <= 8'h05;
 		
-		for (integer i = 16; i <= size - 1; i = i + 1)		// Assign the rest of the memory to 0
+		for (integer i = 1000; i <= size - 1; i = i + 1)		// Assign the rest of the memory to 0
 			begin
 				mem_array[i] <= 8'h0;
 			end
